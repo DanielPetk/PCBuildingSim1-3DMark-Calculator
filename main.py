@@ -10,7 +10,8 @@ while True:
 cpufilter = input("Enter CPU Keyword to Filter By (Enter to skip)").strip("\n").strip()
 gpufilter = input("Enter GPU Keyword to Filter By (Enter to skip)").strip("\n").strip()
 
-
+# Perhaps the most brute-force solution of all time
+# But since theres not that much data in the csv files, its still pretty fast!
 with open("CPUReal.csv", "r") as cpufile, open("GPUReal.csv", "r") as gpufile, open("Results.txt", "w") as newfile:
 
     cpu_reader = csv.reader(cpufile)
@@ -36,3 +37,4 @@ with open("CPUReal.csv", "r") as cpufile, open("GPUReal.csv", "r") as gpufile, o
                 newfile.write(f"{i[0]}, {j[0]}, {totalscore}\n")
 
         gpufile.seek(0)
+
